@@ -195,6 +195,7 @@ def model_fn_builder(bert_config, init_checkpoint, layer_indexes, use_tpu,
 
     predictions = {
         "unique_id": unique_ids,
+        "pooler": model.get_pooled_output(),
     }
 
     for (i, layer_index) in enumerate(layer_indexes):
